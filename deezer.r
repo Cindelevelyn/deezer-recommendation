@@ -43,14 +43,6 @@ train$agitada_radio <- ifelse(train$song_bpm >= 120 & train$has_radio == 1, 1,0)
 
 ##### modelos
 
-# 1 - random forest
-
-library(randomForest)
-
-# diminuindo a porcentagem que vou usar
-rows.to.delete <- 0.05 * nrow(train)
-train <- train[1:rows.to.delete,]
-
 # random forest
 rfm = randomForest(is_listened~.,data = train)
 
